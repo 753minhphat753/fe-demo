@@ -1,5 +1,6 @@
 import { Login } from "../screen/Login/Login";
 import { Home } from "../screen/Home/Home";
+import { Regist } from "../screen/Login/Regist";
 
 export const PublicRoute = [
     {
@@ -9,5 +10,9 @@ export const PublicRoute = [
     {
         path: "/enter",
         element: <Login />,
+    },
+    {
+        path: "/register",
+        element: <Regist />,
     },
 ];

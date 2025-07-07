@@ -1,19 +1,24 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
+
+    const navigate = useNavigate();
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
+    
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Simple validation
+
         if (!email || !password) {
             setError("Please enter both email and password.");
             return;
         }
         setError("");
-        // Handle login logic here
+
         alert(`Logged in as ${email}`);
     };
 
@@ -44,10 +49,20 @@ export const Login = () => {
                 </div>
                 <button
                     type="submit"
-                    className="w-full bg-blue-600 text-black py-2 rounded hover:bg-blue-700 transition"
+                    className="w-full bg-gray-200 text-blue-700 py-2 rounded hover:bg-gray-300 transition mt-2"
+                    onClick={() => navigate("/")}
                 >
                     Login
                 </button>
+
+                <button
+                    type="button"
+                    className="w-full bg-gray-200 text-blue-700 py-2 rounded hover:bg-gray-300 transition mt-2"
+                    onClick={() => navigate("/register")}
+                >
+                    Create a new account
+                </button>
+
             </form>
         </div>
     );
